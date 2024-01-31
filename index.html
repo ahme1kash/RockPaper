@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" type = "text/css" href="./style.css">
-    <script defer src="./script.js"> </script>
+    
 </head>
 <body>
     <div class="score_con">
@@ -14,17 +14,29 @@
             <p>Paper</p>
             <p>Scissors</p>
         </div>
-        <div class="score">
+        <div class="computerscore">
 
             <p>
-                score
+                Computer Score
+
           
             </p>
-            <span>
-                2
-            </span>
+
     
            
+            <div class="comp_counter"> </div>
+        </div>
+        <div class="userscore">
+
+            <p>
+                Your Score
+
+          
+            </p>
+
+    
+           
+            <div class="user_counter"> </div>
         </div>
        
 
@@ -49,28 +61,67 @@
             <span class="keys">
             <div class="paper_pic con">
                 <div class="item">
+                <button class="play1" onclick="play('paper')">
                     <img src="./images/Paper.png" alt="Paper">
+                    </button>
                 </div>
             </div>
             <div class="scissors_pic con">
                 <div class="item">
+                    <button class="play2" onclick="play('scissors')">
                     <img src="./images/Scissors.png" alt="Scissors">
+                 </button>
                 </div>
             </div>
             <div class="rock_pic con">
                 <div class="item">
+                    <button class="play3" onclick="play('rock')">
                     <img src="./images/Rock.png" alt="Rock">
+                   </button>
                 </div>
             </div>
+            
             </span>
         </div>
+        <div class="choices">
+            <img class="user_choice">
+            <div class="result" id="result"> </div>
+            <img class="comp_choice"> 
+    </div>
+        <button class="reset"> </button>
+        <br/>
+        <button class="next"> </button>
         <div class="button_div">
             <button class="btn_Rule">RULES</button>
-
         </div>
         <div class="content-box" id="contentBox">
-            <p>This is the content inside the box.</p>
+         
+              
+            <pre>Rules:
+
+Rock beats scissors, scissors beat 
+paper, and paper beats rock.
+            
+Agree ahead of time whether you’ll
+count off “rock, paper, scissors,
+shoot” or just “rock, paper, scissors.”
+
+            
+Use rock, paper, scissors to settle
+minor decisions or simply play to
+pass the time 
+                
+            
+If both players lay down the same
+hand, each player lays down
+another hand
+</pre>
+<div class="cancel">
+    <buttton class="close">X</button>
+</div>
         </div>
+    
     </div>
+    <script defer src="./script.js"> </script>
 </body>
 </html>
