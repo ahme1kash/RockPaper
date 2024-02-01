@@ -1,41 +1,42 @@
 
 document.addEventListener('DOMContentLoaded', function() {
-getFromLocal()
-const toggleButton = document.querySelector(".btn_Rule");
+    
+    
+    getFromLocal()
+})
 const contentBox = document.querySelector('#contentBox');
 const cancel = document.querySelector(".cancel")
 contentBox.style.display = 'none';
 
+cancel.addEventListener('click', () => {
+    // Toggle the visibility of the content box
+    contentBox.style.display =  'none';
+});
+const toggleButton = document.querySelector(".btn_Rule");
 
 toggleButton.addEventListener('click', () => {
     // Toggle the visibility of the content box
     contentBox.style.display = (contentBox.style.display === 'none') ? 'block' : 'none';
 });
-cancel.addEventListener('click', () => {
-    // Toggle the visibility of the content box
-    contentBox.style.display =  'none';
-});
-
-})
 const path_scissors = './images/Scissors.png';
 const path_rock = './images/Rock.png'
 const path_paper = './images/Paper.png'
-// img.alt = 'Description of the image';
-const img_paths = {"rock":path_rock,"paper":path_paper,"scissors":path_scissors};
 let count2 = document.querySelector('.user_counter');
-let count = document.querySelector('.computer_counter');
+let count = document.querySelector('.comp_counter');
 let score1 = parseInt(localStorage.getItem('Computer'))||0;
 let score2 = parseInt(localStorage.getItem('User'))||0;
 count.innerText = score1;
 count.style.color = "red";
 count2.innerText = score2;
 count2.style.color = "green";
+// img.alt = 'Description of the image';
+const img_paths = {"rock":path_rock,"paper":path_paper,"scissors":path_scissors};
 function play(userChoice) {
     const choices = ['rock', 'paper', 'scissors'];
     const computerChoice = choices[Math.floor(Math.random() * choices.length)];
     
     // Determine the winner
-    let result = determineWinner(userChoice, computerChoice);
+    let result = declareWinner(userChoice, computerChoice);
      if(result == false){
         score1+=1
         let count = document.querySelector('.comp_counter')
@@ -54,7 +55,7 @@ function play(userChoice) {
     
     // document.getElementById('result').innerText = `You chose ${userChoice}. Computer chose ${computerChoice}. ${result}`;
 }
-function determineWinner(userChoice, computerChoice) {
+function declareWinner(userChoice, computerChoice) {
     let winner = "";
     const res = document.querySelector('.result')
     const comp_choice = document.querySelector('.comp_choice')
